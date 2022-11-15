@@ -1,9 +1,6 @@
 package com.proyecto.alsg.entitys;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -13,6 +10,9 @@ import javax.persistence.*;
 @Table(name = "employees")
 @ToString
 @EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +25,8 @@ public class Employee {
     private String address;
     private Double salary;
 
-    public Employee(long id, String firstname, String lastname, String email ,String phone, String address, Double salary) {
+
+    public Employee(long id, String firstname, String lastname, String email, String phone, String address, Double salary) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -33,4 +34,8 @@ public class Employee {
         this.phone = phone;
         this.address = address;
         this.salary = salary;
+    }
 }
+
+
+

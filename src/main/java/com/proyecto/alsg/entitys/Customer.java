@@ -1,9 +1,6 @@
 package com.proyecto.alsg.entitys;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -12,13 +9,15 @@ import javax.persistence.*;
 @Table(name = "customers")
 @ToString
 @EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
 
 //declaracion de la entidad de customer con las mismas "columnas" que la bd
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Integer id;
+    private Long id;
     private String firstname;
     private String lastname;
     private String email;
@@ -26,7 +25,7 @@ public class Customer {
     private String address;
 
 
-    public Customer(int id, String firstname, String lastname, String email ,String phone, String address) {
+    public Customer(long id, String firstname, String lastname, String email ,String phone, String address) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;

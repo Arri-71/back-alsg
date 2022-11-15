@@ -40,7 +40,7 @@ public class CustomerControllerTest extends AbstractTest {
         Mockito.verify(customerService).getAll();
         assertEquals(2,getAllSize);
     }
-
+/*
    @Test
    void when_controller_ask_for_a_customer_by_id_obtain_the_customer(){
       Customer customer = new Customer(1,"Santiago","vera","santiagoarve@unisabana.edu.co","31232861645","cra72a#24-72");
@@ -51,5 +51,7 @@ public class CustomerControllerTest extends AbstractTest {
 
 
     }
+
+ */
 
 }

@@ -21,22 +21,23 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class EmployeeControllerTest {
 
     @Mock
-    EmployeeService employeeServicee;
+    EmployeeService employeeService;
     @InjectMocks
     EmployeeController employeeController;
     @Test
-    void when_controller_ask_for_all_the_customerslist_bring_that_list(){
+    void when_controller_ask_for_all_the_employeelist_bring_that_list(){
+        List<Employee> employeeList = new ArrayList<>();
+        Employee employee1 =  new Employee(1,"Santiago","vera","santiagoarve@unisabana.edu.co","31232861645","cra72a#24-72",1000.00);
+        Employee employee2 = new Employee(2,"Pablo","lugo","pablo@gmail.com","3104567890","cll80 #45",1000.00);
+        employeeList.add(employee1);
+        employeeList.add(employee2);
 
-        List<Employee> customerList = new ArrayList<>();
-        Employee employee1 =  new Employee(1,"Santiago","vera","santiagoarve@unisabana.edu.co","31232861645","cra72a#24-72");
-        Employee employee2 = new Employee(2,"Pablo","lugo","pablo@gmail.com","3104567890","cll80 #45");
-        customerList.add(customer1);
-        customerList.add(customer2);
-
-        Mockito.when(customerService.getAll()).thenReturn(customerList);
-        int getAllSize = customerController.getAll().size();
-        Mockito.verify(customerService).getAll();
+        Mockito.when(employeeService.getAll()).thenReturn(employeeList);
+        int getAllSize = employeeController.getAll().size();
+        Mockito.verify(employeeService).getAll();
         assertEquals(2,getAllSize);
     }
+
+
 
 }
