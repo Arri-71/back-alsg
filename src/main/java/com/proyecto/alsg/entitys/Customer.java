@@ -26,4 +26,14 @@ public class Customer {
     private String address;
 
 
+    public Customer(long id, String firstname, String lastname, String email ,String phone, String address) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+
+
+    }
 }
