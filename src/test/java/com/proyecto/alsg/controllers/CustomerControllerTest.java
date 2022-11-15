@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,5 +41,15 @@ public class CustomerControllerTest extends AbstractTest {
         assertEquals(2,getAllSize);
     }
 
+   @Test
+   void when_controller_ask_for_a_customer_by_id_obtain_the_customer(){
+      Customer customer = new Customer(1,"Santiago","vera","santiagoarve@unisabana.edu.co","31232861645","cra72a#24-72");
+      Mockito.when(customerService.getById(customer.getId())).thenReturn(customer);
+      int getCustomerByID = customerController.getById(customer.getId());
+      Mockito.verify(customerService).getById(customer.getId());
+      assertEquals(1,getCustomerByID);
+
+
+    }
 
 }

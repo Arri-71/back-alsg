@@ -8,7 +8,7 @@ import java.util.List;
 public interface ICustomerService {
 
         List<Customer> getAll();
-        Customer getById(Long id);
+        Customer getById(Integer id);
         void remove(Long id);
         void save(Customer customer);
     }

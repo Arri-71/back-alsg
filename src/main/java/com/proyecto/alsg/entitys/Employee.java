@@ -23,5 +23,14 @@ public class Employee {
     private String email;
     private String phone;
     private String address;
-    private Double Salary;
+    private Double salary;
+
+    public Employee(long id, String firstname, String lastname, String email ,String phone, String address, Double salary) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+        this.salary = salary;
 }

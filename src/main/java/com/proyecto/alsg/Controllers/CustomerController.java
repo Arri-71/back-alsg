@@ -22,8 +22,8 @@ public class CustomerController {
     }
     //traer los datos por id
     @GetMapping("/api/customers/{id}")
-    public Customer getById(@PathVariable String id) {
-        return service.getById(Long.parseLong(id));
+    public Customer getById(Integer customerId) {
+        return service.getById(Integer.parseInt(id));
     }
     //borrar los datos por id
     @DeleteMapping("/api/customers/{id}")
